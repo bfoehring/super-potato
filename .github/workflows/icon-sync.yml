@@ -32,9 +32,8 @@ jobs:
           args: "format=svg outputDir=./figma"
         env:
           # This points to the Figma URL of our current icon kit
-          ACTIONS_ALLOW_UNSECURE_COMMANDS: true 
           FIGMA_FILE_URL: "https://www.figma.com/file/5w5yku9JwPTye1fSvk5BOX/actions-test"
-          FIGMA_TOKEN: $MY_FIGMA_TOKEN
+          FIGMA_TOKEN: ${{ MY_FIGMA_TOKEN }}
       # Move the output files to our icons folder and run the icon linter on them 
       - run: |
           sudo cp -R ./figma/svg/. ./icons/
@@ -43,7 +42,7 @@ jobs:
       # Create a PR if there are any file diffs
       - uses: peter-evans/create-pull-request@v2
         with:
-          token: $MY_GITHUB_TOKEN
+          token: ${{ MY_GITHUB_TOKEN }}
           commit-message: "chore: sync icons with Figma"
           title: "Sync icons from Figma"
           branch: "figma-icon-sync"
