@@ -2,7 +2,7 @@ name: Sync icons from Figma
 on:
   schedule:
     # Every 5 minutes
-    - cron: '* * * * *'
+    - cron: '*/5 * * * *'
 jobs:
   all:
     name: Sync icons
