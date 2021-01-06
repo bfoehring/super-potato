@@ -33,7 +33,7 @@ jobs:
           # This points to the Figma URL of our current icon kit
           ACTIONS_ALLOW_UNSECURE_COMMANDS: true 
           FIGMA_FILE_URL: "https://www.figma.com/file/JntSzB4AsESVN736De2PUc/Sprout-Icons"
-          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+          FIGMA_TOKEN: ${{ secrets.MY_FIGMA_TOKEN }}
       # Move the output files to our icons folder and run the icon linter on them 
       - run: |
           sudo cp -R ./figma/svg/. ./icons/
@@ -42,7 +42,7 @@ jobs:
       # Create a PR if there are any file diffs
       - uses: peter-evans/create-pull-request@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.MY_GITHUB_TOKEN }}
           commit-message: "chore: sync icons with Figma"
           title: "Sync icons from Figma"
           branch: "figma-icon-sync"
