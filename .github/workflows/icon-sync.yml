@@ -39,7 +39,7 @@ jobs:
       - run: |
           sudo cp -R ./figma/svg/. ./icons/
           sudo rm -r ./figma
-          sudo yarn icon-lint write "./icons/*.svg"
+      # sudo yarn icon-lint write "./icons/*.svg"
       # Create a PR if there are any file diffs
       - uses: peter-evans/create-pull-request@v3
         with:
