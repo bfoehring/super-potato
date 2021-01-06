@@ -41,8 +41,10 @@ jobs:
       # sudo yarn icon-lint write "./icons/*.svg"
       # Create a PR if there are any file diffs
       - uses: peter-evans/create-pull-request@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}   
         with:
-          token: ${{ secrets.MY_GITHUB_TOKEN }}
+        # token: ${{ secrets.MY_GITHUB_TOKEN }}
           commit-message: "chore: sync icons with Figma"
           title: "Sync icons from Figma"
           branch: "figma-icon-sync"
