@@ -32,7 +32,7 @@ jobs:
         env:
           # This points to the Figma URL of our current icon kit
           ACTIONS_ALLOW_UNSECURE_COMMANDS: true 
-          FIGMA_FILE_URL: "https://www.figma.com/file/JntSzB4AsESVN736De2PUc/Sprout-Icons"
+          FIGMA_FILE_URL: "https://www.figma.com/file/5w5yku9JwPTye1fSvk5BOX/actions-test"
           FIGMA_TOKEN: ${{ secrets.MY_FIGMA_TOKEN }}
       # Move the output files to our icons folder and run the icon linter on them 
       - run: |
